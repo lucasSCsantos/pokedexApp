@@ -5,9 +5,7 @@ import { Container } from './styles';
 function Home() {
   return (
     <Container>
-      <Text style={{ fontSize: 30 }}>
-        Hello World
-      </Text>
+      <Text>Home</Text>
       <StatusBar style="auto" />
     </Container>
   );
