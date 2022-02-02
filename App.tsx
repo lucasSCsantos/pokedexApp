@@ -1,10 +1,11 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, Text } from 'react-native';
+import { ThemeProvider } from 'styled-components/native';
 import Navigation from './src/Navigation';
+import theme from './src/styles/theme';
 
 export default function App() {
   return (
-    <Navigation />
+    <ThemeProvider theme={theme}>
+      <Navigation />
+    </ThemeProvider>
   );
 }
