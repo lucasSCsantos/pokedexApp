@@ -10,9 +10,10 @@ const Icon = createIconSetFromFontello(fontelloConfig, 'fontello', 'fontello.ttf
 
 interface BadgeProps {
   type: keyof typeof theme.color.type;
+  full?: boolean;
 }
 
-function Badge({ type }: BadgeProps) {
+function Badge({ type, full = false }: BadgeProps) {
   let [fontsLoaded] = useFonts({
     'fontello': require('../../assets/fontello.ttf')
   });
@@ -21,9 +22,13 @@ function Badge({ type }: BadgeProps) {
     return <AppLoading />;
   } else {
     return (
-      <Container type={type}>
-        <Icon name={type} color="white" size={15} style={{ marginRight: 5 }} />
-        <PokemonType color="white">{type.charAt(0).toUpperCase() + type.slice(1)}</PokemonType>
+      <Container type={type} full={full}>
+        <Icon name={type} color="white" size={15} />
+        { full && (
+          <PokemonType color="white" style={{ marginLeft: 5 }}>
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </PokemonType>
+        )}
       </Container>
     );
   }
