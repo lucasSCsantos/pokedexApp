@@ -30,3 +30,5 @@ export default (array: StatProps[]) => {
 	})
 	return stats;
 }
+
+//Pega o stats base e apartir disso calcula o max e o min pra cada stat
