@@ -1,11 +1,12 @@
-import { TextInput } from 'react-native';
-import { Container } from './styles';
+import { useState } from 'react';
+import { Container, Input } from './styles';
 
 
 function TextField() {
+  const [text, setText] = useState("");
   return (
     <Container>
-      <TextInput>textField</TextInput>
+      <Input onChangeText={setText} value={text} placeholder="text" />
     </Container>
   );
 };
