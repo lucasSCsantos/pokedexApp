@@ -1,6 +1,5 @@
 import { Container } from './styles';
 import { Title } from '../../components/typography';
-import getDamageRelations from '../../services/getDamageRelations';
 
 function Home() {
   return (
