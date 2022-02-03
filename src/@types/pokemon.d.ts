@@ -10,6 +10,17 @@ export type PokemonProps = {
 	}[]
 }
 
+export type PokemonDataProps = {
+	id: string,
+	pokemonName: string,
+	typeList: {
+		type: {
+			name: string,
+		}
+	}[],
+	type: Color,
+}
+
 export type TypeProps = {
 		type: {
 			name: string,
