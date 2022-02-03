@@ -15,17 +15,12 @@ function PokemonsList({ filter }: PokemonListProps) {
   const [filteredList, setFilteredList] = useState([]);
 
   useEffect(() => {
-    let isMounted = true;
     const getAllPokemons = async () => {
       const results = await getPokemons();
       setPokemons(results);
     };
     
-    if (isMounted) getAllPokemons();
-
-    return () => {
-      isMounted = false;
-    }
+    getAllPokemons();
   }, [])
   
   useEffect(() => {

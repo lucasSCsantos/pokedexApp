@@ -20,17 +20,17 @@ function PokemonCards({ name }: PokemonCardsProps) {
   const [pokemonName, setPokemonName] = useState('');
 
   useEffect(() => {
-    const abortController = new AbortController();
+    let isMounted = true;
     const getPokemon = async (name: string) => {
       const details = await getPokemonDetails(name);
-      if (details) setPokemon(details);
+      if (isMounted) setPokemon(details);
     }
 
     getPokemon(name);
 
     return () => {
-      abortController.abort()
-    };
+      isMounted = false;
+    }
   }, [name])
 
   useEffect(() => {
@@ -46,24 +46,20 @@ function PokemonCards({ name }: PokemonCardsProps) {
     return <AppLoading />;
   } else {
     return (
-      <>
-        { (pokemon && typeList) && (
-          <CardContainer color={type}>
-            <PokemonNumber color="number">#{id}</PokemonNumber>
-              <PokemonName color="white">{pokemonName}</PokemonName>
-              <BadgeContainer>
-                {typeList.map(({ type }, index) => (
-                  <Badge type={type.name as Color} full key={index} style={{ marginRight: 5 }} />
-                ))}
-              </BadgeContainer>
-              <PokemonImage 
-                source={{ 
-                  uri: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png` 
-                }} 
-              />
-          </CardContainer>
-        )}
-      </>
+      <CardContainer color={type}>
+        <PokemonNumber color="number">#{id}</PokemonNumber>
+          <PokemonName color="white">{pokemonName}</PokemonName>
+          <BadgeContainer>
+            {typeList && typeList.map(({ type }, index) => (
+              <Badge type={type.name as Color} full key={index} style={{ marginRight: 5 }} />
+            ))}
+          </BadgeContainer>
+          <PokemonImage 
+            source={{ 
+              uri: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png` 
+            }} 
+          />
+      </CardContainer>
     );
   }
 }
