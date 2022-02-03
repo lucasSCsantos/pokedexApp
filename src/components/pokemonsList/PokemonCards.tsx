@@ -16,7 +16,7 @@ function PokemonCards({ name }: PokemonCardsProps) {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
   const [id, setId] = useState("");
   const [type, setType] = useState<Color>();
-  const [typeList, setTypeList] = useState<TypeProps>([]);
+  const [typeList, setTypeList] = useState<TypeProps | false>(false);
   const [pokemonName, setPokemonName] = useState('');
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function PokemonCards({ name }: PokemonCardsProps) {
   } else {
     return (
       <>
-        { pokemon && (
+        { (pokemon && typeList) && (
           <CardContainer color={type}>
             <PokemonNumber color="number">#{id}</PokemonNumber>
               <PokemonName color="white">{pokemonName}</PokemonName>

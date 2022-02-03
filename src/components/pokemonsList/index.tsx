@@ -1,3 +1,4 @@
+import AppLoading from 'expo-app-loading';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { PokemonProps } from '../../@types/pokemon';
@@ -14,12 +15,17 @@ function PokemonsList({ filter }: PokemonListProps) {
   const [filteredList, setFilteredList] = useState([]);
 
   useEffect(() => {
+    let isMounted = true;
     const getAllPokemons = async () => {
       const results = await getPokemons();
       setPokemons(results);
     };
     
-    getAllPokemons();
+    if (isMounted) getAllPokemons();
+
+    return () => {
+      isMounted = false;
+    }
   }, [])
   
   useEffect(() => {
@@ -27,13 +33,17 @@ function PokemonsList({ filter }: PokemonListProps) {
     setFilteredList(list);
   }, [filter, pokemons])
 
-  return (
-    <Container showsVerticalScrollIndicator={false}>
-      {filteredList && filteredList.map(({ name }, index) => (
-        <PokemonCards name={name} key={index}/>
-      ))}
-    </Container>
-  );
+  if (!filteredList) {
+    return <AppLoading />;
+  } else {
+    return (
+      <Container showsVerticalScrollIndicator={false}>
+        {filteredList && filteredList.map(({ name }, index) => (
+          <PokemonCards name={name} key={index}/>
+        ))}
+      </Container>
+    );
+  }
 };
 
 export default PokemonsList;
