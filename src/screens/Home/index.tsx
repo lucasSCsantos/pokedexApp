@@ -21,7 +21,7 @@ function Home() {
         value={text}
         placeholder={placeholder}
       />
-      <PokemonsList />
+      <PokemonsList filter={text} />
     </Container>
   );
 };
