@@ -43,6 +43,7 @@ export const Description = styled.Text<TextProps>`
 	`}
 	font-weight: 400;
 	font-size: 16px;
+	line-height: 19px;
 `;
 
 export const PokemonNumber = styled.Text<TextProps>`

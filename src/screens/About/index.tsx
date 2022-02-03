@@ -1,9 +1,10 @@
 import { Text } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
-import { Container } from './styles';
+import { Container, InfoContainer } from './styles';
 import { useEffect, useState } from 'react';
 import getPokemonDetails from '../../services/getPokemonDetails';
-import { PokemonProps } from '../../@types/pokemon';
+import { Color, PokemonProps } from '../../@types/pokemon';
+import { Description } from '../../components/typography';
+import PokedexData from './PokedexData';
 
 function About() {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
@@ -16,13 +17,26 @@ function About() {
     }
 
     getPokemon(name);
+    console.log(pokemon)
   }, [name])
   
   return (
-    <Container>
-      <Text>About</Text>
-      <StatusBar style="auto" />
-    </Container>
+    <>
+      {
+        pokemon && (
+          <Container color={pokemon && pokemon.types[0].type.name as Color}>
+            <InfoContainer>
+              <Description color="grey">
+                Bulbasaur can be seen napping in bright sunlight.
+                There is a seed on its back.
+                By soaking up the sun's rays, the seed grows progressively larger.
+              </Description>
+              <PokedexData />
+            </InfoContainer>
+          </Container>
+        )
+      }
+    </>
   );
 };
 

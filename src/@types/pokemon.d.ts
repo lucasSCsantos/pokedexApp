@@ -7,7 +7,12 @@ export type PokemonProps = {
 		type: {
 			name: string,
 		}
-	}[]
+	}[],
+	species: {
+		name: string,
+	},
+	height: number,
+	weight: number,
 }
 
 export type PokemonDataProps = {
