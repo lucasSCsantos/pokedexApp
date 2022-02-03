@@ -6,7 +6,7 @@ export const Container = styled.ScrollView`
 `;
 
 export const CardContainer = styled.View`
-	background-color: ${({ theme }) => theme.color.type.grass};
+	background-color: ${({ theme }) => theme.color.background.type.grass};
 	width: 100%;
 	height: 115px;
 	margin-bottom: 30px;
@@ -14,6 +14,8 @@ export const CardContainer = styled.View`
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
+	z-index: 1;
+	margin-top: 10px;
 `;
 
 export const BadgeContainer = styled.View`
@@ -24,3 +26,12 @@ export const BadgeContainer = styled.View`
 	width: 140px;
 	margin-top: 5px;
 `;
+
+export const PokemonImage = styled.Image`
+	width: 130px;
+	height: 130px;
+	position: absolute;
+	right: 20px;
+	top: -20px;
+	z-index: 10;
+`

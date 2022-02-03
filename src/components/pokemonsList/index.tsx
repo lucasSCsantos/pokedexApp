@@ -6,6 +6,20 @@ function PokemonsList() {
   return (
     <Container showsVerticalScrollIndicator={false}>
       <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
+      <PokemonCards />
     </Container>
   );
 };
