@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Color, PokemonProps, TypeProps } from '../../@types/pokemon';
+import correctName from '../../helpers/correctName';
 import correctNumbers from '../../helpers/correctNumbers';
 import getPokemonDetails from '../../services/getPokemonDetails';
 import Badge from '../badge';
@@ -15,6 +16,7 @@ function PokemonCards({ name }: PokemonCardsProps) {
   const [id, setId] = useState("");
   const [type, setType] = useState<Color>();
   const [typeList, setTypeList] = useState<TypeProps>([]);
+  const [pokemonName, setPokemonName] = useState('');
 
   useEffect(() => {
     const getPokemon = async (name: string) => {
@@ -30,6 +32,7 @@ function PokemonCards({ name }: PokemonCardsProps) {
       setId(correctNumbers(pokemon.id));
       setType(pokemon.types[0].type.name as Color);
       setTypeList(pokemon.types);
+      setPokemonName(correctName(pokemon.name))
     }
   }, [pokemon])
 
@@ -38,10 +41,10 @@ function PokemonCards({ name }: PokemonCardsProps) {
       { pokemon && (
         <CardContainer color={type}>
           <PokemonNumber color="number">#{id}</PokemonNumber>
-            <PokemonName color="white">{pokemon.name}</PokemonName>
+            <PokemonName color="white">{pokemonName}</PokemonName>
             <BadgeContainer>
-              {typeList.map(({ type }) => (
-                <Badge type={type.name as Color} full />
+              {typeList.map(({ type }, index) => (
+                <Badge type={type.name as Color} full key={index} />
               ))}
             </BadgeContainer>
             <PokemonImage 

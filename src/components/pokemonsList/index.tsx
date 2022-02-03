@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { Text } from 'react-native';
 import getPokemons from '../../services/getPokemons';
 import PokemonCards from './PokemonCards';
 import { Container } from './styles';
@@ -19,8 +18,8 @@ function PokemonsList() {
 
   return (
     <Container showsVerticalScrollIndicator={false}>
-      {pokemons && pokemons.map(({ name }) => (
-        <PokemonCards name={name} />
+      {pokemons && pokemons.map(({ name }, index) => (
+        <PokemonCards name={name} key={index}/>
       ))}
     </Container>
   );
