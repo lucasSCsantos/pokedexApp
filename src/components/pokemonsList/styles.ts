@@ -1,12 +1,20 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
+import theme from '../../styles/theme';
+
+export type CardProps = {
+	color?: keyof typeof theme.color.background.type;
+}
+
 
 export const Container = styled.ScrollView`
 	width: 100%;
 	margin-top: 20px;
 `;
 
-export const CardContainer = styled.View`
-	background-color: ${({ theme }) => theme.color.background.type.grass};
+export const CardContainer = styled.View<CardProps>`
+	${({ color = "grass" }) => css`
+		background-color: ${theme.color.background.type[color]};
+	`}
 	width: 100%;
 	height: 115px;
 	margin-bottom: 30px;
