@@ -47,19 +47,19 @@ function PokemonCards({ name }: PokemonCardsProps) {
   return (
     <CardContainer color={type}>
       <PokemonNumber color="number">#{id}</PokemonNumber>
-        <PokemonName color="white">{pokemonName}</PokemonName>
-        <BadgeContainer>
-          {typeList.length > 0 ? typeList.map(({ type }, index) => (
-            <Badge type={type.name as Color} full key={index} style={{ marginRight: 5 }} />
-          )) : (
-            <Description color="grey">Loading...</Description>
-          )}
-        </BadgeContainer>
-        <PokemonImage 
-          source={{ 
-            uri: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png` 
-          }}
-        />
+      <PokemonName color="white">{pokemonName}</PokemonName>
+      <BadgeContainer>
+        {typeList.length > 0 ? typeList.map(({ type }, index) => (
+          <Badge type={type.name as Color} full key={index} style={{ marginRight: 5 }} />
+        )) : (
+          <Description color="grey">Loading...</Description>
+        )}
+      </BadgeContainer>
+      <PokemonImage 
+        source={{ 
+          uri: `https://assets.pokemon.com/assets/cms2/img/pokedex/full/${id}.png` 
+        }}
+      />
     </CardContainer>
   );
 }

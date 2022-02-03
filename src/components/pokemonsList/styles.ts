@@ -22,7 +22,7 @@ export const CardContainer = styled.View<CardProps>`
 	display: flex;
 	flex-direction: column;
 	z-index: 1;
-	margin-top: 10px;
+	margin-top: 15px;
 `;
 
 export const BadgeContainer = styled.View`
