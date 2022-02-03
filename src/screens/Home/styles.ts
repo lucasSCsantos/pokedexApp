@@ -8,7 +8,7 @@ export const Container = styled.View`
 	padding: 100px 40px 0;
 `;
 
-export const AppTitle = styled(ApplicationTitle)`
+export const HomeAppTitle = styled(ApplicationTitle)`
 	margin-bottom: 10px;
 `;
 

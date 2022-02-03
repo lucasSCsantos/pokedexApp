@@ -1,4 +1,4 @@
-import { AppTitle, Container, HomeDescription, HomeTextField } from './styles';
+import { HomeAppTitle, Container, HomeDescription, HomeTextField } from './styles';
 import { useState } from 'react';
 
 function Home() {
@@ -7,9 +7,9 @@ function Home() {
 
   return (
     <Container>
-      <AppTitle color="black">
+      <HomeAppTitle color="black">
         Pokédex
-      </AppTitle>
+      </HomeAppTitle>
       <HomeDescription color="grey">
         Search for Pokémon by name or using the National Pokédex number.
       </HomeDescription>
