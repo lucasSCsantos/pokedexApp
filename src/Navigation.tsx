@@ -12,7 +12,10 @@ function Navigation() {
         <Stack.Screen name="Home" component={Home} options={{
           headerShown: false
         }} />
-        <Stack.Screen name="About" component={About} />
+        <Stack.Screen name="About" component={About} options={{
+          headerTransparent: true,
+          title: "",
+        }} />
       </Stack.Navigator>
     </NavigationContainer>
   );

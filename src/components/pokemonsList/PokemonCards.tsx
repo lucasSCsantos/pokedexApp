@@ -1,3 +1,5 @@
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { useEffect, useState } from 'react';
 import { Color, PokemonDataProps, PokemonProps } from '../../@types/pokemon';
 import correctName from '../../helpers/correctName';
@@ -15,6 +17,8 @@ interface PokemonCardsProps {
 function PokemonCards({ name }: PokemonCardsProps) {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
   const [pokemonData, setPokemonData] = useState<PokemonDataProps>(pokemonDataMock);
+  const navigation = useNavigation<StackNavigationProp<any>>();
+
 
   useEffect(() => {
     let isMounted = true;
@@ -41,10 +45,14 @@ function PokemonCards({ name }: PokemonCardsProps) {
     }
   }, [pokemon])
 
+  const handlePress = () => {
+    navigation.push('About')
+  }
+
   const { type, id, pokemonName, typeList } = pokemonData && pokemonData;
 
   return (
-    <CardContainer color={type}>
+    <CardContainer color={type} onPress={handlePress}>
       <PokemonNumber color="number">#{id}</PokemonNumber>
       <PokemonName color="white">{pokemonName}</PokemonName>
       <BadgeContainer>

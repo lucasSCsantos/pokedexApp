@@ -10,7 +10,7 @@ export const Container = styled.ScrollView`
 	margin-top: 20px;
 `;
 
-export const CardContainer = styled.View<CardProps>`
+export const CardContainer = styled.TouchableOpacity<CardProps>`
 	${({ color = "grass" }) => css`
 		background-color: ${theme.color.background.type[color]};
 	`}
