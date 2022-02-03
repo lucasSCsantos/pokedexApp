@@ -44,7 +44,7 @@ function PokemonCards({ name }: PokemonCardsProps) {
             <PokemonName color="white">{pokemonName}</PokemonName>
             <BadgeContainer>
               {typeList.map(({ type }, index) => (
-                <Badge type={type.name as Color} full key={index} />
+                <Badge type={type.name as Color} full key={index} style={{ marginRight: 5 }} />
               ))}
             </BadgeContainer>
             <PokemonImage 

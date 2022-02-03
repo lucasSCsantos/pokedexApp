@@ -26,11 +26,9 @@ export const CardContainer = styled.View<CardProps>`
 `;
 
 export const BadgeContainer = styled.View`
-	/* background-color: red; */
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
-	width: 140px;
+	min-width: 120px;
 	margin-top: 5px;
 `;
 
