@@ -1,10 +1,11 @@
 import { Text } from 'react-native';
+import PokemonCards from './PokemonCards';
 import { Container } from './styles';
 
 function PokemonsList() {
   return (
     <Container showsVerticalScrollIndicator={false}>
-      <Text>pokemonsList</Text>
+      <PokemonCards />
     </Container>
   );
 };
