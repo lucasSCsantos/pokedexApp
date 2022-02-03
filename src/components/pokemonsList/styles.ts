@@ -5,7 +5,6 @@ export type CardProps = {
 	color?: keyof typeof theme.color.background.type;
 }
 
-
 export const Container = styled.ScrollView`
 	width: 100%;
 	margin-top: 20px;
