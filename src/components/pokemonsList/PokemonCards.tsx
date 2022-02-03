@@ -1,4 +1,3 @@
-import AppLoading from 'expo-app-loading';
 import { useEffect, useState } from 'react';
 import { Color, PokemonDataProps, PokemonProps } from '../../@types/pokemon';
 import correctName from '../../helpers/correctName';
@@ -28,7 +27,7 @@ function PokemonCards({ name }: PokemonCardsProps) {
 
     return () => {
       isMounted = false;
-    }
+    };
   }, [name])
 
   useEffect(() => {
