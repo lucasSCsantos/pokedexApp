@@ -6,9 +6,10 @@ import theme from '../../styles/theme';
 interface TextFieldProps {
   onChangeText: Dispatch<SetStateAction<string>>;
   value: string;
+  placeholder: string;
 }
 
-function TextField({ onChangeText, value }: TextFieldProps) {
+function TextField({ onChangeText, value, placeholder }: TextFieldProps) {
   const { defaultInput, pressedInput } = theme.color.background
   const [background, setBackground] = useState(defaultInput);
 
@@ -28,7 +29,7 @@ function TextField({ onChangeText, value }: TextFieldProps) {
         value={value}
         onFocus={ () => onFocus() }
         onBlur={ () => onBlur() }
-        placeholder="What Pokemon are you looking for?"
+        placeholder={placeholder}
       />
     </Container>
   );
