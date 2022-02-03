@@ -14,14 +14,14 @@ function Home() {
         Pokédex
       </ApplicationTitle>
       <Description color="grey" style={{ marginBottom: 25 }} >
-        Search for Pokémon by name or using the National Pokédex number.
+        Search for Pokémon by name.
       </Description>
       <TextField
         onChangeText={setText}
         value={text}
         placeholder={placeholder}
       />
-      <PokemonsList />
+      <PokemonsList filter={text} />
     </Container>
   );
 };
