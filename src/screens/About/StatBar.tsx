@@ -8,7 +8,6 @@ interface StatBarProps {
 }
 
 function StatBar({ size, color }: StatBarProps) {
-  console.log(color)
   return (
     <StatBarContainer>
       <StatBarActive style={{ width: size, backgroundColor: theme.color.type[color] }} />
