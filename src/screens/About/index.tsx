@@ -1,20 +1,26 @@
-import { Text } from 'react-native';
 import { Container, InfoContainer } from './styles';
 import { useEffect, useState } from 'react';
 import getPokemonDetails from '../../services/getPokemonDetails';
 import { Color, PokedexDataProps, PokemonProps } from '../../@types/pokemon';
-import { Description, FilterTitle, Title } from '../../components/typography';
+import { Description, FilterTitle } from '../../components/typography';
 import PokedexData from './PokedexData';
 import getPokedexData from '../../helpers/getPokedexData';
 import pokedexDataMock from '../../mocks/pokedexDataMock';
 import FaceData from './FaceData';
 import getSpecieDetails from '../../services/getSpecieDetails';
+import { connect } from 'react-redux';
+import { PokemonState } from '../../store/pokemon/types';
+import correctDescription from '../../helpers/correctDescription';
 
-function About() {
+interface AboutProps {
+  pokemonName: string,
+}
+
+function About({ pokemonName }: AboutProps) {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
   const [pokedexData, setPokedexData] = useState<PokedexDataProps>(pokedexDataMock);
   const [description, setDescription] = useState('');
-  const name = "mew"
+  const name = pokemonName;
 
   useEffect(() => {
     const getPokemon = async (name: string) => {
@@ -30,10 +36,9 @@ function About() {
   useEffect(() => {
     const getDescription = async (specie: string) => {
       const result = await getSpecieDetails(specie);
-      const text = result.flavor_text_entries[0].flavor_text
-        .replace(/\n/g, ' ')
-          .replace('POKéMON', 'pokemon');
-      setDescription(text);
+      const entries = result.flavor_text_entries;
+      const text = correctDescription(entries);
+      if (text) setDescription(text);
     }
     
     if (pokemon) getDescription(pokemon.species.name);
@@ -42,7 +47,7 @@ function About() {
   return (
     <>
       {
-        pokemon && (
+        !!(pokemon && description) && (
           <Container color={pokemon && pokemon.types[0].type.name as Color}>
             <FaceData pokemon={pokemon} />
             <FilterTitle color="white" style={{position: "absolute", bottom: "65%"}}>
@@ -59,4 +64,8 @@ function About() {
   );
 };
 
-export default About;
+const mapStateToProps = (state: PokemonState) => ({
+  pokemonName: state.pokemon.pokemon,
+});
+
+export default connect(mapStateToProps, null)(About)
