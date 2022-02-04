@@ -3,7 +3,7 @@ import { Container, InfoContainer } from './styles';
 import { useEffect, useState } from 'react';
 import getPokemonDetails from '../../services/getPokemonDetails';
 import { Color, PokedexDataProps, PokemonProps } from '../../@types/pokemon';
-import { Description, FilterTitle } from '../../components/typography';
+import { Description, FilterTitle, Title } from '../../components/typography';
 import PokedexData from './PokedexData';
 import getPokedexData from '../../helpers/getPokedexData';
 import pokedexDataMock from '../../mocks/pokedexDataMock';
@@ -12,7 +12,7 @@ import FaceData from './FaceData';
 function About() {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
   const [pokedexData, setPokedexData] = useState<PokedexDataProps>(pokedexDataMock);
-  const name = "mewtwo"
+  const name = "bulbasaur"
 
   useEffect(() => {
     const getPokemon = async (name: string) => {
