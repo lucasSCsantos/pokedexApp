@@ -7,6 +7,7 @@ import { Description, FilterTitle } from '../../components/typography';
 import PokedexData from './PokedexData';
 import getPokedexData from '../../helpers/getPokedexData';
 import pokedexDataMock from '../../mocks/pokedexDataMock';
+import FaceData from './FaceData';
 
 function About() {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
@@ -29,6 +30,7 @@ function About() {
       {
         pokemon && (
           <Container color={pokemon && pokemon.types[0].type.name as Color}>
+            <FaceData pokemon={pokemon} />
             <FilterTitle color="white" style={{position: "absolute", bottom: "65%"}}>
               About
             </FilterTitle>

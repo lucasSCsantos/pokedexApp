@@ -39,3 +39,27 @@ export const WeaknessesContainer = styled.View`
 	display: flex;
 	flex-direction: row;
 `
+export const FaceContainer = styled.View`
+	display: flex;
+	flex-direction: row;
+	margin-top: 95px;
+	width: 334px;
+	align-items: center;
+`
+
+export const PokemonImage = styled.Image`
+	width: 125px;
+	height: 125px;
+	margin-right: 25px;
+`
+
+export const BadgeContainer = styled.View`
+	display: flex;
+	flex-direction: row;
+	min-width: 120px;
+	margin-top: 5px;
+`;
+
+export const FaceInfoContainer = styled.View`
+	width: 209px;
+`;
