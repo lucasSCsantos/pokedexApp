@@ -1,3 +1,5 @@
+import correctStatName, { statCompare } from "../helpers/correctStatName";
+
 export type StatProps = {
 	base_stat: number;
 	effort: number;
@@ -21,8 +23,10 @@ export default (array: StatProps[]) => {
 			min_stat = Math.floor((base_stat * 2 + 4) / 1.1);
 		}
 
+		const name = correctStatName(stat.name as keyof typeof statCompare);
+
 		return {
-			name: stat.name,
+			name,
 			base_stat,
 			min_stat,
 			max_stat,

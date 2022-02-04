@@ -63,3 +63,33 @@ export const BadgeContainer = styled.View`
 export const FaceInfoContainer = styled.View`
 	width: 209px;
 `;
+
+export const StatsDataContainer = styled.View`
+	width: 100%;
+	margin-top: 20px;
+	/* position: absolute; */
+`
+
+export const StatContainer = styled.View`
+	margin-bottom: 20px;
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	align-items: center;
+	/* background-color: red; */
+	justify-content: space-between;
+`
+
+export const StatBarContainer = styled.View`
+	height: 4px;
+	background-color: blue;
+	width: 159px;
+	margin-left: 10px;
+`
+
+export const StatBarActive = styled.View`
+	background-color: red;
+	border-radius: 2px;
+	margin-left: 10px;
+	height: 4px;
+`

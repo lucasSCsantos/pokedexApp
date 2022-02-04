@@ -11,6 +11,7 @@ import getSpecieDetails from '../../services/getSpecieDetails';
 import { connect } from 'react-redux';
 import { PokemonState } from '../../store/pokemon/types';
 import correctDescription from '../../helpers/correctDescription';
+import StatsData from './StatsData';
 
 interface AboutProps {
   pokemonName: string,
@@ -56,6 +57,7 @@ function About({ pokemonName }: AboutProps) {
             <InfoContainer>
               <Description color="grey">{`${description}`}</Description>
               <PokedexData data={pokedexData} />
+              <StatsData stats={pokemon.stats} />
             </InfoContainer>
           </Container>
         )

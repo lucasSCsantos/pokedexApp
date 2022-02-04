@@ -1,3 +1,4 @@
+import { StatProps } from "../services/getStatsDetails";
 import theme from "../styles/theme";
 
 export type PokemonProps = {
@@ -17,7 +18,8 @@ export type PokemonProps = {
 		ability: {
 			name: string,
 		}
-	}[]
+	}[],
+	stats: StatProps[],
 }
 
 export type PokemonDataProps = {
