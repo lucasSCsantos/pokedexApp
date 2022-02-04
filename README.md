@@ -64,6 +64,8 @@ Esse projeto foi desenvolvido com:
   
   # Inicie o app:
   $ yarn start
+  
+  # Depois disso pelo app Expo Go, escaneie o QR code exibido no terminal
 ```
 
 # :thought_balloon: Inspiração
