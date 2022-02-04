@@ -1,7 +1,7 @@
 import { PokemonProps, TypeProps } from "../@types/pokemon"
-import getAbilityDetails from "../services/getAbilityDetails";
 import getDamageRelations, { DamageProps } from "../services/getDamageRelations";
 import getTypeDetails from "../services/getTypeDetails";
+import getSpecieDetails from "../services/getSpecieDetails";
 
 const getSpecie = (specie: string) => {
 	return specie.charAt(0).toUpperCase() + specie.slice(1);

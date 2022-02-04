@@ -8,11 +8,13 @@ import PokedexData from './PokedexData';
 import getPokedexData from '../../helpers/getPokedexData';
 import pokedexDataMock from '../../mocks/pokedexDataMock';
 import FaceData from './FaceData';
+import getSpecieDetails from '../../services/getSpecieDetails';
 
 function About() {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
   const [pokedexData, setPokedexData] = useState<PokedexDataProps>(pokedexDataMock);
-  const name = "bulbasaur"
+  const [description, setDescription] = useState('');
+  const name = "mew"
 
   useEffect(() => {
     const getPokemon = async (name: string) => {
@@ -24,7 +26,19 @@ function About() {
 
     getPokemon(name);
   }, [name])
-  
+
+  useEffect(() => {
+    const getDescription = async (specie: string) => {
+      const result = await getSpecieDetails(specie);
+      const text = result.flavor_text_entries[0].flavor_text
+        .replace(/\n/g, ' ')
+          .replace('POKéMON', 'pokemon');
+      setDescription(text);
+    }
+    
+    if (pokemon) getDescription(pokemon.species.name);
+  }, [pokemon])
+
   return (
     <>
       {
@@ -35,11 +49,7 @@ function About() {
               About
             </FilterTitle>
             <InfoContainer>
-              <Description color="grey">
-                Bulbasaur can be seen napping in bright sunlight.
-                There is a seed on its back.
-                By soaking up the sun's rays, the seed grows progressively larger.
-              </Description>
+              <Description color="grey">{`${description}`}</Description>
               <PokedexData data={pokedexData} />
             </InfoContainer>
           </Container>
