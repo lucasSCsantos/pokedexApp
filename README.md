@@ -67,7 +67,4 @@ Esse projeto foi desenvolvido com:
 ```
 
 # :thought_balloon: Inspiração
-- Design inspired by [Pokedex App design](https://dribbble.com/shots/6563578-Pokedex-App-Animation) mabe by [Saepul Nahwan](https://www.instagram.com/saepulnahwan/).
-
-Made with ❤️ by Matheus Pires 👋🏻 [Get in touch!](https://github.com/MatheusPires99)
-
+- Design inspirado no [Pokedex App design](https://www.behance.net/gallery/95727849/Pokdex-App) feito pelo [Flávio Farias](https://farias.design/).
