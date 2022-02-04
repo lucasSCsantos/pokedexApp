@@ -1,6 +1,5 @@
 import AppLoading from 'expo-app-loading';
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PokemonProps } from '../../@types/pokemon';
 import getPokemons from '../../services/getPokemons';
 import PokemonCards from './PokemonCards';

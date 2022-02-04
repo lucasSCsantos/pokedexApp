@@ -51,6 +51,4 @@ export type DataProps = {
 	id: number,
 }
 
-
-
 export type Color = keyof typeof theme.color.background.type | keyof typeof theme.color.type;

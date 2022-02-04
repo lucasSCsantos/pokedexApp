@@ -1,7 +1,6 @@
 import { PokemonProps, TypeProps } from "../@types/pokemon"
 import getDamageRelations, { DamageProps } from "../services/getDamageRelations";
 import getTypeDetails from "../services/getTypeDetails";
-import getSpecieDetails from "../services/getSpecieDetails";
 
 const getSpecie = (specie: string) => {
 	return specie.charAt(0).toUpperCase() + specie.slice(1);
@@ -36,27 +35,27 @@ export default async (data: PokemonProps) => {
 		{
 			title: "Specie",
 			value: specie,
-			id: 0,
+			id: 0
 		},
 		{
 			title: "Height",
 			value: height,
-			id: 1,
+			id: 1
 		},
 		{
 			title: "Weight",
 			value: weight,
-			id: 2,
+			id: 2
 		},
 		{
 			title: "Ability",
 			value: ability,
-			id: 3,
+			id: 3
 		},
 		{
 			title: "Weaknesses",
 			value: weaknesses,
-			id: 4,
+			id: 4
 		}
 	]
 }

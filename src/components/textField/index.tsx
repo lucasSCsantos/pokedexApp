@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from 'react';
+import React, { Dispatch, SetStateAction, useState } from 'react';
 import { Container, Input } from './styles';
 import Icon from '@expo/vector-icons/FontAwesome5';
 import theme from '../../styles/theme';

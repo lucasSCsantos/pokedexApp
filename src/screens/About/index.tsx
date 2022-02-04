@@ -1,5 +1,5 @@
 import { Container, InfoContainer } from './styles';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import getPokemonDetails from '../../services/getPokemonDetails';
 import { Color, PokedexDataProps, PokemonProps } from '../../@types/pokemon';
 import { Description, FilterTitle } from '../../components/typography';

@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useState , useEffect } from 'react';
 import { FlatList } from 'react-native-gesture-handler';
 import { Color } from '../../@types/pokemon';
 import { Description, FilterTitle, PokemonType } from '../../components/typography';
@@ -21,7 +20,7 @@ function StatsData({ stats, type }: StatsDataProps) {
     setStatsList(list);
   }, [stats])
 
-  const item = ({ item }: { item: typeof pokemonStatsMock[0] }) => (
+  const renderItem = ({ item }: { item: typeof pokemonStatsMock[0] }) => (
     <StatContainer>
       <PokemonType color="black" style={{ width: 44  }}>
         {item.name}
@@ -39,8 +38,8 @@ function StatsData({ stats, type }: StatsDataProps) {
       <FlatList
         style={{ marginTop: 22 }}
         data={statsList}
-        renderItem={item}
-        keyExtractor={(item, index) => index.toString()}
+        renderItem={renderItem}
+        keyExtractor={(_, index) => index.toString()}
       />
     </StatsDataContainer>
   );

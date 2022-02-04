@@ -1,3 +1,4 @@
+import React from 'react';
 import { Color } from '../../@types/pokemon';
 import theme from '../../styles/theme';
 import { StatBarActive, StatBarContainer } from './styles';

@@ -1,9 +1,8 @@
-import { Reducer } from "redux";
 import { SET_NAME } from "./actions";
 import { PokemonAction } from "./types";
 
 const INITIAL_STATE = {
-	pokemon: '',
+	pokemon: ''
 }
 
 

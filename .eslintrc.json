@@ -1,0 +1,37 @@
+{
+    "settings": {
+        "import/extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx",
+          ".d.ts"
+        ]
+      },
+    "env": {
+        "es2021": true
+    },
+    "extends": [
+        "react-native-typescript", 
+        "plugin:import/typescript"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "no-console": 2,
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "react-native/no-inline-styles": "off",
+        "import/no-unresolved": "off",
+        "comma-dangle": ["error", "never"]
+    }
+}

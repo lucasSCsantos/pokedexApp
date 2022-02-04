@@ -22,7 +22,7 @@ export default (...objects: DamageProps[]) => {
 	const data: DataProps = {
 	 	ddf: [],
 		ddt: [],
-		tps: [],
+		tps: []
 	}
 
 	objects.map((object) => {
