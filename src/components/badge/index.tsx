@@ -10,7 +10,7 @@ const Icon = createIconSetFromFontello(fontelloConfig, 'fontello', 'fontello.ttf
 interface BadgeProps {
   type: keyof typeof theme.color.type;
   full?: boolean;
-  style: StyleProp<{}>;
+  style?: StyleProp<{}>;
 }
 
 function Badge({ type, full = false, style }: BadgeProps) {

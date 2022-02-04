@@ -1,3 +1,4 @@
+import { StatProps } from "../services/getStatsDetails";
 import theme from "../styles/theme";
 
 export type PokemonProps = {
@@ -7,7 +8,18 @@ export type PokemonProps = {
 		type: {
 			name: string,
 		}
-	}[]
+	}[],
+	species: {
+		name: string,
+	},
+	height: number,
+	weight: number,
+	abilities: {
+		ability: {
+			name: string,
+		}
+	}[],
+	stats: StatProps[],
 }
 
 export type PokemonDataProps = {
@@ -26,5 +38,19 @@ export type TypeProps = {
 			name: string,
 		}
 }[];
+
+export type PokedexDataProps = {
+	title: string,
+	value: string | number | string[],
+	id: number,
+}[]
+
+export type DataProps = {
+	title: string,
+	value: string | number | string[],
+	id: number,
+}
+
+
 
 export type Color = keyof typeof theme.color.background.type | keyof typeof theme.color.type;
