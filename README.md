@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Pokedex" src="https://ik.imagekit.io/hwyksvj4iv/pokedex_N_WgWrJK0s.png" width="250px" />
+  <img alt="Pokedex" src="http://1.bp.blogspot.com/-0V4itR_v87M/UtsCF-ehNYI/AAAAAAAABjU/UEQ5Jiy_85o/s1600/pokedex-3d-logo.png" width="250px" />
 </h1>
 
 <p align="center">
