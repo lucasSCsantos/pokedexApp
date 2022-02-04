@@ -1,14 +1,19 @@
+import { Reducer } from "redux";
 import { SET_NAME } from "./actions";
+import { PokemonAction } from "./types";
 
 const INITIAL_STATE = {
 	pokemon: '',
 }
 
-export default (state = INITIAL_STATE, action: { type: string, payload: string }) => {
+
+const reducer = (state = INITIAL_STATE, action: PokemonAction) => {
 	switch (action.type) {
 		case SET_NAME:
-			return {...state, name: action.payload}
+			return {...state, pokemon: action.payload}
 		default:
 			return state;
 	}
 }
+
+export default reducer;

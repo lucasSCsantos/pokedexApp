@@ -2,13 +2,14 @@ import { Container, InfoContainer } from './styles';
 import { useEffect, useState } from 'react';
 import getPokemonDetails from '../../services/getPokemonDetails';
 import { Color, PokedexDataProps, PokemonProps } from '../../@types/pokemon';
-import { Description, FilterTitle, Title } from '../../components/typography';
+import { Description, FilterTitle } from '../../components/typography';
 import PokedexData from './PokedexData';
 import getPokedexData from '../../helpers/getPokedexData';
 import pokedexDataMock from '../../mocks/pokedexDataMock';
 import FaceData from './FaceData';
 import getSpecieDetails from '../../services/getSpecieDetails';
 import { connect } from 'react-redux';
+import { PokemonState } from '../../store/pokemon/types';
 
 interface AboutProps {
   pokemonName: string,
@@ -63,8 +64,8 @@ function About({ pokemonName }: AboutProps) {
   );
 };
 
-const mapStateToProps = (state) => ({
-  pokemonName: state.pokemon.name,
+const mapStateToProps = (state: PokemonState) => ({
+  pokemonName: state.pokemon.pokemon,
 });
 
 export default connect(mapStateToProps, null)(About)
