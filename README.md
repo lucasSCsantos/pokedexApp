@@ -20,7 +20,7 @@
 
 <h1 align="center">
   <img alt="Home" src="https://i.imgur.com/KcNSlO4.gif" width="400" />
-  <img alt="About" src="https://im3.ezgif.com/tmp/ezgif-3-e4aefbcc4c.gif" width="400" />
+  <img alt="About" src="https://i.imgur.com/ubGUpZq.gif" width="400" />
 </h1>
 
 ## :page_with_curl: About
