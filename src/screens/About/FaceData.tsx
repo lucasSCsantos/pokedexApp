@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Color, PokemonDataProps, PokemonProps } from '../../@types/pokemon';
 import Badge from '../../components/badge';
-import { ApplicationTitle, Description, FilterTitle, PokemonName, PokemonNumber } from '../../components/typography';
+import { ApplicationTitle, Description, FilterTitle } from '../../components/typography';
 import correctName from '../../helpers/correctName';
 import correctNumbers from '../../helpers/correctNumbers';
 import pokemonDataMock from '../../mocks/pokemonDataMock';
@@ -20,7 +20,7 @@ function FaceData({ pokemon }: FaceDataProps) {
         id: correctNumbers(pokemon.id),
         type: pokemon.types[0].type.name as Color,
         typeList: pokemon.types,
-        pokemonName: correctName(pokemon.name),
+        pokemonName: correctName(pokemon.name)
       })
     }
   }, [pokemon])

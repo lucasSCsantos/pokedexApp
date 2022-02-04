@@ -4,7 +4,7 @@ export const statCompare = {
 	defense: 'Defense',
 	'special-attack': 'Sp. Atk',
 	'special-defense': 'Sp. Def',
-	speed: 'Speed',
+	speed: 'Speed'
 }
 
 export default (stat: keyof typeof statCompare) => {

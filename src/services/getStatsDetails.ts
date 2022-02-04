@@ -29,7 +29,7 @@ export default (array: StatProps[]) => {
 			name,
 			base_stat,
 			min_stat,
-			max_stat,
+			max_stat
 		}
 	})
 	return stats;

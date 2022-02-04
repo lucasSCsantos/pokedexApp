@@ -39,7 +39,7 @@ const theme = {
         psychic: '#ff6568',
         rock: '#d4c294',
         steel: '#4c91b2',
-        water: '#58abf6',
+        water: '#58abf6'
       },
       white: '#ffffff',
       defaultInput: '#f2f2f2',
@@ -52,7 +52,7 @@ const theme = {
       grey: '#747476',
       number: '#17171b99'
     }
-  },
+  }
 };
 
 export default theme;

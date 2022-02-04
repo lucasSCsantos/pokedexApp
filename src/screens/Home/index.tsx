@@ -1,5 +1,5 @@
 import { Container } from './styles';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ApplicationTitle, Description } from '../../components/typography';
 import TextField from '../../components/textField';
 import PokemonsList from '../../components/pokemonsList';

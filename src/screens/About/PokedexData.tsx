@@ -1,3 +1,4 @@
+import React from 'react'
 import { FlatList } from 'react-native-gesture-handler';
 import { Color, DataProps, PokedexDataProps } from '../../@types/pokemon';
 import Badge from '../../components/badge';
@@ -10,7 +11,7 @@ interface PokedexDataComponentProps {
 
 function PokedexData({ data }: PokedexDataComponentProps) {
 
-  const item = ({ item }: { item: DataProps }) => (
+  const renderItem = ({ item }: { item: DataProps }) => (
     <DataContainer>
       <PokemonType color="black" style={{ minWidth: 85 }}>
         {item.title}
@@ -35,8 +36,8 @@ function PokedexData({ data }: PokedexDataComponentProps) {
       <FlatList
         style={{ marginTop: 22 }}
         data={data}
-        renderItem={item}
-        keyExtractor={(item, index) => index.toString()}
+        renderItem={renderItem}
+        keyExtractor={(_, index) => index.toString()}
       />
     </PokedexDataContainer>
   );
