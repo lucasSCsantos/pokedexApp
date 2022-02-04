@@ -19,6 +19,6 @@
 </p>
 
 <h1 align="center">
-  <img alt="Home" src="hhttps://im2.ezgif.com/tmp/ezgif-2-ed33601144.gif" width="400" />
+  <img alt="Home" src="https://im2.ezgif.com/tmp/ezgif-2-ed33601144.gif" width="400" />
   <img alt="About" src="https://im3.ezgif.com/tmp/ezgif-3-c298b65ceb.gif" width="400" />
 </h1>
