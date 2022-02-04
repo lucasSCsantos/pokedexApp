@@ -39,7 +39,16 @@ export type TypeProps = {
 
 export type PokedexDataProps = {
 	title: string,
-	value: string | number | string[]
+	value: string | number | string[],
+	id: number,
 }[]
+
+export type DataProps = {
+	title: string,
+	value: string | number | string[],
+	id: number,
+}
+
+
 
 export type Color = keyof typeof theme.color.background.type | keyof typeof theme.color.type;

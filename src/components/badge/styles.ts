@@ -19,6 +19,7 @@ export const Container = styled.View<ContainerProps>`
 			background-color: ${theme.color.type[type]};
 			${!full && css`
 				min-width: 25px;
+				margin-right: 5px;
 			`}
 	`}
 `;

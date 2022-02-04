@@ -9,6 +9,7 @@ export const Container = styled.View<ContainerProps>`
 	${({ color = "grass" }) => css`
 		background-color: ${theme.color.background.type[color]};
 	`}
+	align-items: center;
 	flex: 3;
 `;
 
@@ -27,3 +28,14 @@ export const InfoContainer = styled.View`
 export const PokedexDataContainer = styled.View`
 	margin-top: 30px;
 `;
+
+export const DataContainer = styled.View`
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+`
+
+export const WeaknessesContainer = styled.View`
+	display: flex;
+	flex-direction: row;
+`

@@ -36,22 +36,27 @@ export default async (data: PokemonProps) => {
 		{
 			title: "Specie",
 			value: specie,
+			id: 0,
 		},
 		{
 			title: "Height",
 			value: height,
+			id: 1,
 		},
 		{
 			title: "Weight",
 			value: weight,
+			id: 2,
 		},
 		{
 			title: "Ability",
 			value: ability,
+			id: 3,
 		},
 		{
 			title: "Weaknesses",
 			value: weaknesses,
+			id: 4,
 		}
 	]
 }

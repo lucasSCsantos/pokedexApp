@@ -1,32 +1,44 @@
-import { View } from 'react-native';
+import { ListRenderItem, ListRenderItemInfo, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
+import { Color, DataProps, PokedexDataProps } from '../../@types/pokemon';
+import Badge from '../../components/badge';
 import { Description, FilterTitle, PokemonType } from '../../components/typography';
-import { PokedexDataContainer } from './styles';
+import { PokedexDataContainer, DataContainer, WeaknessesContainer } from './styles';
 
-interface PokedexDataProps {
+interface PokedexDataComponentProps {
+  data: PokedexDataProps,
 }
 
-function PokedexData() {
+function PokedexData({ data }: PokedexDataComponentProps) {
 
-  // const renderItem = ({ item }) => (
-  //   <View>
-  //     <PokemonType color="black">
-  //       {item.title}
-  //     </PokemonType>
-  //     <Description color="grey">
-  //       {item.value}
-  //     </Description>
-  //   </View>
-  // );
+  const item = ({ item }: { item: DataProps }) => (
+    <DataContainer>
+      <PokemonType color="black" style={{ minWidth: 85 }}>
+        {item.title}
+      </PokemonType>
+      <Description color="grey">
+        {typeof item.value !== 'object' ? item.value : 
+          (
+            <WeaknessesContainer>
+              {item.value.map((weak) => (
+                <Badge type={weak as Color} key={weak} style={{ marginRight: 10 }} />
+              ))}
+            </WeaknessesContainer>
+          )
+        }
+      </Description>
+    </DataContainer>
+  );
 
   return (
     <PokedexDataContainer>
       <FilterTitle color="black">PokedexData</FilterTitle>
-      {/* <FlatList
-        data={}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      /> */}
+      <FlatList
+        style={{ marginTop: 22 }}
+        data={data}
+        renderItem={item}
+        keyExtractor={(item, index) => index.toString()}
+      />
     </PokedexDataContainer>
   );
 }
