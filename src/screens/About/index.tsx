@@ -1,4 +1,3 @@
-import { Text } from 'react-native';
 import { Container, InfoContainer } from './styles';
 import { useEffect, useState } from 'react';
 import getPokemonDetails from '../../services/getPokemonDetails';
@@ -9,12 +8,17 @@ import getPokedexData from '../../helpers/getPokedexData';
 import pokedexDataMock from '../../mocks/pokedexDataMock';
 import FaceData from './FaceData';
 import getSpecieDetails from '../../services/getSpecieDetails';
+import { connect } from 'react-redux';
 
-function About() {
+interface AboutProps {
+  pokemonName: string,
+}
+
+function About({ pokemonName }: AboutProps) {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
   const [pokedexData, setPokedexData] = useState<PokedexDataProps>(pokedexDataMock);
   const [description, setDescription] = useState('');
-  const name = "mew"
+  const name = pokemonName;
 
   useEffect(() => {
     const getPokemon = async (name: string) => {
@@ -42,7 +46,7 @@ function About() {
   return (
     <>
       {
-        pokemon && (
+        !!(pokemon && description) && (
           <Container color={pokemon && pokemon.types[0].type.name as Color}>
             <FaceData pokemon={pokemon} />
             <FilterTitle color="white" style={{position: "absolute", bottom: "65%"}}>
@@ -59,4 +63,8 @@ function About() {
   );
 };
 
-export default About;
+const mapStateToProps = (state) => ({
+  pokemonName: state.pokemon.name,
+});
+
+export default connect(mapStateToProps, null)(About)

@@ -1,20 +1,24 @@
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { Dispatch } from 'react';
 import { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { Color, PokemonDataProps, PokemonProps } from '../../@types/pokemon';
 import correctName from '../../helpers/correctName';
 import correctNumbers from '../../helpers/correctNumbers';
 import pokemonDataMock from '../../mocks/pokemonDataMock';
 import getPokemonDetails from '../../services/getPokemonDetails';
+import { setName } from '../../store/pokemon/actions';
 import Badge from '../badge';
 import { Description, PokemonName, PokemonNumber } from '../typography';
 import { CardContainer, BadgeContainer, PokemonImage } from './styles';
 
 interface PokemonCardsProps {
   name: string;
+  changeName: (value: string) => void;
 }
 
-function PokemonCards({ name }: PokemonCardsProps) {
+function PokemonCards({ name, changeName }: PokemonCardsProps) {
   const [pokemon, setPokemon] = useState<PokemonProps | false>(false);
   const [pokemonData, setPokemonData] = useState<PokemonDataProps>(pokemonDataMock);
   const navigation = useNavigation<StackNavigationProp<any>>();
@@ -46,6 +50,7 @@ function PokemonCards({ name }: PokemonCardsProps) {
   }, [pokemon])
 
   const handlePress = () => {
+    if (pokemon) changeName(pokemon.name);
     navigation.push('About')
   }
 
@@ -71,4 +76,8 @@ function PokemonCards({ name }: PokemonCardsProps) {
   );
 }
 
-export default PokemonCards;
+const mapDispatchToProps = (dispatch: any) => ({
+  changeName: (value: string) => dispatch(setName(value))
+});
+
+export default connect(null, mapDispatchToProps)(PokemonCards);
