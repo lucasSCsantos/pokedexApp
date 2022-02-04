@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { PokemonState } from '../../store/pokemon/types';
 import correctDescription from '../../helpers/correctDescription';
 import StatsData from './StatsData';
+import { ScrollView } from 'react-native-gesture-handler';
 
 interface AboutProps {
   pokemonName: string,
@@ -55,9 +56,11 @@ function About({ pokemonName }: AboutProps) {
               About
             </FilterTitle>
             <InfoContainer>
-              <Description color="grey">{`${description}`}</Description>
-              <PokedexData data={pokedexData} />
-              <StatsData stats={pokemon.stats} />
+              <ScrollView style={{ marginTop: 40 }} showsVerticalScrollIndicator={false}> 
+                <Description color="grey">{`${description}`}</Description>
+                <PokedexData data={pokedexData} />
+                <StatsData stats={pokemon.stats} type={pokemon && pokemon.types[0].type.name as Color} />
+              </ScrollView>
             </InfoContainer>
           </Container>
         )

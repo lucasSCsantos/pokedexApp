@@ -1,16 +1,17 @@
-import { ReactNode } from 'react';
-
-import { View, Text, StyleSheet } from 'react-native';
+import { Color } from '../../@types/pokemon';
+import theme from '../../styles/theme';
 import { StatBarActive, StatBarContainer } from './styles';
 
 interface StatBarProps {
   size: number;
+  color: Color;
 }
 
-function StatBar({ size }: StatBarProps) {
+function StatBar({ size, color }: StatBarProps) {
+  console.log(color)
   return (
     <StatBarContainer>
-      <StatBarActive style={{ width: size }} />
+      <StatBarActive style={{ width: size, backgroundColor: theme.color.type[color] }} />
     </StatBarContainer>
   );
 }

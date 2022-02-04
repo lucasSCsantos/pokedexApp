@@ -22,7 +22,7 @@ export const InfoContainer = styled.View`
 	border-radius: 30px;
 	border-bottom-left-radius: 0;
 	border-bottom-right-radius: 0;
-	padding: 40px 40px 0;
+	padding: 0 40px 0;
 `;
 
 export const PokedexDataContainer = styled.View`
@@ -67,7 +67,7 @@ export const FaceInfoContainer = styled.View`
 export const StatsDataContainer = styled.View`
 	width: 100%;
 	margin-top: 20px;
-	/* position: absolute; */
+	margin-bottom: 20px;
 `
 
 export const StatContainer = styled.View`
@@ -76,13 +76,11 @@ export const StatContainer = styled.View`
 	width: 100%;
 	flex-direction: row;
 	align-items: center;
-	/* background-color: red; */
 	justify-content: space-between;
 `
 
 export const StatBarContainer = styled.View`
 	height: 4px;
-	background-color: blue;
 	width: 159px;
 	margin-left: 10px;
 `
