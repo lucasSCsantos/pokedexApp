@@ -37,10 +37,8 @@ function About({ pokemonName }: AboutProps) {
     const getDescription = async (specie: string) => {
       const result = await getSpecieDetails(specie);
       const entries = result.flavor_text_entries;
-      const text = correctDescription(entries)
-        // .replace(/\n/g, ' ')
-        //   .replace('POKéMON', 'pokemon');
-      setDescription(text);
+      const text = correctDescription(entries);
+      if (text) setDescription(text);
     }
     
     if (pokemon) getDescription(pokemon.species.name);
