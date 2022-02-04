@@ -1,4 +1,3 @@
-import { ListRenderItem, ListRenderItemInfo, View } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { Color, DataProps, PokedexDataProps } from '../../@types/pokemon';
 import Badge from '../../components/badge';

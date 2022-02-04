@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { Color } from '../../@types/pokemon';
 import { Description, FilterTitle, PokemonType } from '../../components/typography';
