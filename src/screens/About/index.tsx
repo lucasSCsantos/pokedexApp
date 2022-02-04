@@ -10,6 +10,7 @@ import FaceData from './FaceData';
 import getSpecieDetails from '../../services/getSpecieDetails';
 import { connect } from 'react-redux';
 import { PokemonState } from '../../store/pokemon/types';
+import correctDescription from '../../helpers/correctDescription';
 
 interface AboutProps {
   pokemonName: string,
@@ -35,9 +36,10 @@ function About({ pokemonName }: AboutProps) {
   useEffect(() => {
     const getDescription = async (specie: string) => {
       const result = await getSpecieDetails(specie);
-      const text = result.flavor_text_entries[0].flavor_text
-        .replace(/\n/g, ' ')
-          .replace('POKéMON', 'pokemon');
+      const entries = result.flavor_text_entries;
+      const text = correctDescription(entries)
+        // .replace(/\n/g, ' ')
+        //   .replace('POKéMON', 'pokemon');
       setDescription(text);
     }
     
